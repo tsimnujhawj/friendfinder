@@ -10,8 +10,7 @@ app.use(bodyParser.json());
 
 // API routes
 // TODO: build dummy array for friend in apiRoutes
-// TODO: build HTML GET requests, link to html files in htmlRoutes
-// require("./routing/apiRoutes")(app);
+require("./routing/apiRoutes")(app);
 require("./routing/htmlRoutes")(app);
 
 app.listen(PORT, (error, results)=>{
