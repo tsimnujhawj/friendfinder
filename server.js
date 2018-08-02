@@ -1,19 +1,20 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const path = require("path")
 
-const exp = express();
+const app = express();
 const PORT = 8080;
 
-// Setup Express data parsing
-exp.use(bodyParser.urlencoded({ extended: true }));
-exp.use(bodyParser.json());
+// Setup appress data parsing
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 // API routes
-// require("./routing/apiRoutes")(exp);
-// require("./routing/htmlRoutes")(exp);
+// TODO: build dummy array for friend in apiRoutes
+// TODO: build HTML GET requests, link to html files in htmlRoutes
+// require("./routing/apiRoutes")(app);
+require("./routing/htmlRoutes")(app);
 
-exp.listen(PORT, (error, results)=>{
+app.listen(PORT, (error, results)=>{
     if (error) throw error;
     console.log("Listening on PORT: 8080...");
 });
