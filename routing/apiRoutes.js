@@ -10,5 +10,8 @@ module.exports = (app)=>{
     //     friendsObj.push(req.body);
     //     res.json(true);
     // })
+    app.post("/api/friends", (req, res)=>{
+        
+    })
 
 }

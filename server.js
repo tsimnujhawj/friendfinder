@@ -9,7 +9,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // API routes
-// TODO: build dummy array for friend in apiRoutes
+// TODO: build method for pushing/POSt new friend to friends in apiRoutes
+// Use constructor?...
 require("./routing/apiRoutes")(app);
 require("./routing/htmlRoutes")(app);
 
