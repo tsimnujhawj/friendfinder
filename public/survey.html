@@ -15,7 +15,10 @@
     
 </head>
 <body>
-    <h1>Friend Finder - Survey</h1>
+    <header>
+        <h1>Friend Finder - Survey</h1>
+    </header>
+    
 
 <div class="questionTable">
     <div class="questionSection">
@@ -148,7 +151,35 @@
     </select>
     </div>
 
+    <button type="submit" class="btn btn-primary submit" id="submit">Submit</button>
+
 </div>
 
 </body>
 </html>
+
+<script type="text/javascript">
+document.getElementById("submit").addEventListener("click", (e)=>{
+    e.preventDefault();
+    
+    let newFriend = {
+    "name":"Ahmed",
+    "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+    "scores":[
+        5,
+        1,
+        4,
+        4,
+        5,
+        1,
+        2,
+        5,
+        4,
+        1
+      ]
+    }
+
+    // app.post("/api/")
+
+});
+</script>
