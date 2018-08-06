@@ -168,7 +168,7 @@ document.getElementById("submit").addEventListener("click", (e)=>{
     let randNum = Math.floor(Math.random() * 10);
 
     let newFriend = {
-    "name":"Ahmed" + randNum,
+    "name":"Ahmed",
     "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
     "scores":[
         5,
@@ -184,7 +184,7 @@ document.getElementById("submit").addEventListener("click", (e)=>{
       ]
     }
 
-    // Use AJAX to post data from id val to array data, can I just use Express?
+    // Use AJAX to post data from id val to array data, can't I just use Express?
     // app.post("/api/")
 
     $.post("/api/friends", newFriend, (data)=>{
