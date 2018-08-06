@@ -18,3 +18,8 @@ header {
 .submit {
     margin-bottom: 50px;
 }
+
+.panel-body {
+    width: 960px;
+    max-width: 100%;
+}

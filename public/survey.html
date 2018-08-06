@@ -21,7 +21,20 @@
     <header>
         <h1>Friend Finder - Survey</h1>
     </header>
-    
+
+    <!-- Your information needs to go here, form with NAME input and picture link -->
+    <div class="panel-body">
+        <form role="form">
+            <div class="form-group">
+                <label for="friend-name">Name</label>
+                <input type="text" class="form-control" id="friend-name">
+            </div>
+            <div class="form-group">
+                <label for="picture-link">Picture Link</label>
+                <input type="text" class="form-control" id="picture-link">
+            </div>
+        </form>
+    </div>
 
 <div class="questionTable">
     <div class="questionSection">
@@ -166,21 +179,34 @@ document.getElementById("submit").addEventListener("click", (e)=>{
     e.preventDefault();
     
     let randNum = Math.floor(Math.random() * 10);
+    let name = document.getElementById("friend-name").value;
+    let picture = document.getElementById("picture-link").value;
+    let q1 = document.getElementById("q1").value;
+    let q2 = document.getElementById("q2").value;
+    let q3 = document.getElementById("q3").value;
+    let q4 = document.getElementById("q4").value;
+    let q5 = document.getElementById("q5").value;
+    let q6 = document.getElementById("q6").value;
+    let q7 = document.getElementById("q7").value;
+    let q8 = document.getElementById("q8").value;
+    let q9 = document.getElementById("q9").value;
+    let q10 = document.getElementById("q10").value;
+
 
     let newFriend = {
-    "name":"Ahmed",
-    "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
-    "scores":[
-        5,
-        1,
-        4,
-        4,
-        5,
-        1,
-        2,
-        5,
-        4,
-        1
+    "name": name,
+    "photo": picture,
+    "scores": [
+        q1,
+        q2,
+        q3,
+        q4,
+        q5,
+        q6,
+        q7,
+        q8,
+        q9,
+        q10
       ]
     }
 
