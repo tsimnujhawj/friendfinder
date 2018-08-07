@@ -177,9 +177,12 @@
 <script type="text/javascript">
 document.getElementById("submit").addEventListener("click", (e)=>{
     e.preventDefault();
-    
-    
+    if (validateForm()){
+    submitForm();
+    }
+});
 
+    function submitForm(){
     // let randNum = Math.floor(Math.random() * 10);
     // Grab value from input and selection
     let name = document.getElementById("friend-name").value;
@@ -215,8 +218,8 @@ document.getElementById("submit").addEventListener("click", (e)=>{
     }
 
     // clear input boxes
-    document.getElementById("form").reset();
-    document.querySelectorAll("chosen-select").reset();
+    // document.getElementById("form").reset();
+    // document.querySelectorAll("chosen-select").reset();
     // document.getElementsByClassName("chosen-select").reset();
 
     // Use AJAX to post data from id val to array data, can't I just use Express?
@@ -225,17 +228,15 @@ document.getElementById("submit").addEventListener("click", (e)=>{
     $.post("/api/friends", newFriend, (data)=>{
         console.log("you have posted successfully")
     })
-
-});
+  }
 
     function validateForm(){
-      let x = document.querySelectorAll("form-control").value;
-      if (x === "") {
-        alert("Please complete the form");
-        return false;
-      } else {
-        // TODO: create submitForm func wrap
-        submitForm();
-      }
+      $(".form-control").each(()=>{
+        if ($(this).val() === "") {
+          return false;
+        }
+        return true;
+      })
+      
     }
 </script>
