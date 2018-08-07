@@ -233,8 +233,10 @@ document.getElementById("submit").addEventListener("click", (e)=>{
     function validateForm(){
       $(".form-control").each(()=>{
         if ($(this).val() === "") {
+          console.log("False")
           return false;
         }
+        console.log("True")
         return true;
       })
       
