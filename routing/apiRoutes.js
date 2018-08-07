@@ -12,6 +12,14 @@ module.exports = (app)=>{
     // })
     app.post("/api/friends", (req, res)=>{
         friendsObj.push(req.body);
+        let userScores = req.body.scores;
+        let matchedName = "";
+        let matchedPic = "";
+        console.log(userScores);
+        for (let i = 0; i < friendsObj.length; i++){
+            
+        }
+
         console.log("data posted")
     })
 
