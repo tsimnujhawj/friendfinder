@@ -177,13 +177,11 @@
 <script type="text/javascript">
 document.getElementById("submit").addEventListener("click", (e)=>{
     e.preventDefault();
-    if (validateForm()){
     submitForm();
-    }
 });
 
+    // Function to submit the form to the API
     function submitForm(){
-    // let randNum = Math.floor(Math.random() * 10);
     // Grab value from input and selection
     let name = document.getElementById("friend-name").value;
     let picture = document.getElementById("picture-link").value;
@@ -199,7 +197,7 @@ document.getElementById("submit").addEventListener("click", (e)=>{
     let q10 = document.getElementById("q10").value;
 
 
-    // add value to new object
+    // add values to new object
     let newFriend = {
     "name": name,
     "photo": picture,
@@ -217,28 +215,27 @@ document.getElementById("submit").addEventListener("click", (e)=>{
       ]
     }
 
-    // clear input boxes
+    // TODO: clear input boxes
     // document.getElementById("form").reset();
     // document.querySelectorAll("chosen-select").reset();
     // document.getElementsByClassName("chosen-select").reset();
 
     // Use AJAX to post data from id val to array data, can't I just use Express?
-    // need to clear input and selection boxes
-
     $.post("/api/friends", newFriend, (data)=>{
         console.log("you have posted successfully")
     })
   }
 
-    function validateForm(){
-      $(".form-control").each(()=>{
-        if ($(this).val() === "") {
-          console.log("False")
-          return false;
-        }
-        console.log("True")
-        return true;
-      })
+    // TODO: Need to validate the form. ensure all options have been filled.
+    // function validateForm(){
+    //   $(".form-control").each(()=>{
+    //     if ($(".form-control").val() === "") {
+    //       console.log("False")
+    //       alert("Please complete the form.")
+    //     }
+    //     console.log("True")
+    //     submitForm();
+    //   })
       
-    }
+    // }
 </script>
