@@ -40,7 +40,7 @@
     <div class="questionSection">
     <h5><strong>Question 1</strong></h5>
     <h6>Question here.</h6>
-    <select class="chosen-select" id="q1">
+    <select class="chosen-select form-control" id="q1">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
       <option value="2">2</option>
@@ -53,7 +53,7 @@
     <div class="questionSection">
     <h5><strong>Question 2</strong></h5>
     <h6>Question here.</h6>
-    <select class="chosen-select" id="q2">
+    <select class="chosen-select form-control" id="q2">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
       <option value="2">2</option>
@@ -66,7 +66,7 @@
     <div class="questionSection">
     <h5><strong>Question 3</strong></h5>
     <h6>Question here.</h6>
-    <select class="chosen-select" id="q3">
+    <select class="chosen-select form-control" id="q3">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
       <option value="2">2</option>
@@ -79,7 +79,7 @@
     <div class="questionSection">
     <h5><strong>Question 4</strong></h5>
     <h6>Question here.</h6>
-    <select class="chosen-select" id="q4">
+    <select class="chosen-select form-control" id="q4">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
       <option value="2">2</option>
@@ -92,7 +92,7 @@
     <div class="questionSection">
     <h5><strong>Question 5</strong></h5>
     <h6>Question here.</h6>
-    <select class="chosen-select" id="q5">
+    <select class="chosen-select form-control" id="q5">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
       <option value="2">2</option>
@@ -105,7 +105,7 @@
     <div class="questionSection">
     <h5><strong>Question 6</strong></h5>
     <h6>Question here.</h6>
-    <select class="chosen-select" id="q6">
+    <select class="chosen-select form-control" id="q6">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
       <option value="2">2</option>
@@ -118,7 +118,7 @@
     <div class="questionSection">
     <h5><strong>Question 7</strong></h5>
     <h6>Question here.</h6>
-    <select class="chosen-select" id="q7">
+    <select class="chosen-select form-control" id="q7">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
       <option value="2">2</option>
@@ -131,7 +131,7 @@
     <div class="questionSection">
     <h5><strong>Question 8</strong></h5>
     <h6>Question here.</h6>
-    <select class="chosen-select" id="q8">
+    <select class="chosen-select form-control" id="q8">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
       <option value="2">2</option>
@@ -144,7 +144,7 @@
     <div class="questionSection">
     <h5><strong>Question 9</strong></h5>
     <h6>Question here.</h6>
-    <select class="chosen-select" id="q9">
+    <select class="chosen-select form-control" id="q9">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
       <option value="2">2</option>
@@ -157,7 +157,7 @@
     <div class="questionSection">
     <h5><strong>Question 10</strong></h5>
     <h6>Question here.</h6>
-    <select class="chosen-select" id="q10">
+    <select class="chosen-select form-control" id="q10">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
       <option value="2">2</option>
@@ -178,6 +178,8 @@
 document.getElementById("submit").addEventListener("click", (e)=>{
     e.preventDefault();
     
+    
+
     // let randNum = Math.floor(Math.random() * 10);
     // Grab value from input and selection
     let name = document.getElementById("friend-name").value;
@@ -214,6 +216,7 @@ document.getElementById("submit").addEventListener("click", (e)=>{
 
     // clear input boxes
     document.getElementById("form").reset();
+    document.querySelectorAll("chosen-select").reset();
     // document.getElementsByClassName("chosen-select").reset();
 
     // Use AJAX to post data from id val to array data, can't I just use Express?
@@ -222,7 +225,17 @@ document.getElementById("submit").addEventListener("click", (e)=>{
     $.post("/api/friends", newFriend, (data)=>{
         console.log("you have posted successfully")
     })
-    
 
 });
+
+    function validateForm(){
+      let x = document.querySelectorAll("form-control").value;
+      if (x === "") {
+        alert("Please complete the form");
+        return false;
+      } else {
+        // TODO: create submitForm func wrap
+        submitForm();
+      }
+    }
 </script>
