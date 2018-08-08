@@ -1,6 +1,8 @@
-* {
+body {
     margin: 0 auto;
     text-align: center;
+    width: 960px;
+    max-width: 100%;
 }
 
 .questionTable {
@@ -13,6 +15,8 @@
 
 header {
     padding: 10px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .submit {
@@ -22,4 +26,6 @@ header {
 .panel-body {
     width: 960px;
     max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
 }
