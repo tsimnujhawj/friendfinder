@@ -32,6 +32,7 @@ module.exports = (app)=>{
         }
         friendsObj.push(req.body);
         console.log("data posted")
+        console.log(matchedName + " Pic: " + matchedPic)
         res.json({status: "Okay", matchedName: matchedName, matchedPic: matchedPic});
     })
 

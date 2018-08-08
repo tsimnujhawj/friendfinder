@@ -13,7 +13,40 @@ let friendsObj = [{
         4,
         1
       ]
-  }]
+  },
+  {
+    "name":"Spiderman",
+    "photo":"https://lumiere-a.akamaihd.net/v1/images/usa_spider-man_chi_spider-man_r_d909a17b.png",
+    "scores":[
+        3,
+        2,
+        5,
+        5,
+        3,
+        2,
+        2,
+        5,
+        2,
+        1
+      ]
+  },
+  {
+    "name":"Ironman",
+    "photo":"https://cms-assets.tutsplus.com/uploads/users/346/posts/17031/image/ironman_final.jpg",
+    "scores":[
+        5,
+        5,
+        4,
+        3,
+        1,
+        4,
+        5,
+        2,
+        1,
+        5
+      ]
+  }
+]
   
 
   module.exports = friendsObj;
