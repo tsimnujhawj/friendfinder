@@ -7,6 +7,7 @@ const PORT = 8080;
 // Setup appress data parsing
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(express.static("public"))
 
 // API routes
 // TODO: build method for pushing/POSt new friend to friends in apiRoutes
