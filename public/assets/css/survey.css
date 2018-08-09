@@ -7,10 +7,13 @@ body {
 
 .questionTable {
     background-color: whitesmoke;
+    margin: 0 auto;
+    width: 260px;
 }
 
 .questionSection {
     padding-bottom: 50px;
+    border: solid #fff 10px;
 }
 
 header {
