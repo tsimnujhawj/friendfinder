@@ -27,8 +27,12 @@ header {
 }
 
 .panel-body {
-    width: 960px;
+    width: 400px;
     max-width: 100%;
     margin: 0 auto;
     text-align: center;
+}
+
+.linkSection {
+    margin-bottom: 40px;
 }
