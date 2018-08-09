@@ -15,25 +15,33 @@ module.exports = (app)=>{
         let matchedName = "";
         let matchedPic = "";
         let totalDiff = 10000;
+        let bestFriend = {
+            name: "",
+            picture: "",
+            friendDiff: 1000
+        };
+
         console.log(userScores);
         // loop through the friends list
         for (let i = 0; i < friendsObj.length; i++){
-            let difference = '';
+            let difference = 0;
             // loop through the user's score
             for (let j = 0; j < userScores.length; j++){
                 // concate the total
-                difference += Math.abs(friendsObj[i].scores[j] - userScores[j])
+                difference += Math.abs(parseInt(friendsObj[i].scores[j]) - parseInt(userScores[j]))
             }
             console.log(difference);
-            if (difference < totalDiff){
-                matchedName = friendsObj[i].name;
-                matchedPic = friendsObj[i].photo;
+            console.log(totalDiff);
+            if (difference <= bestFriend.friendDiff){
+                bestFriend.name = friendsObj[i].name;
+                bestFriend.picture = friendsObj[i].photo;
+                bestFriend.friendDiff = difference;
             }
         }
         friendsObj.push(req.body);
         console.log("data posted")
-        console.log(matchedName + " Pic: " + matchedPic)
-        res.json({status: "Okay", matchedName: matchedName, matchedPic: matchedPic});
+        console.log(bestFriend.name + " Pic: " + bestFriend.picture)
+        res.json({status: "Okay", matchedName: bestFriend.name, matchedPic: bestFriend.picture});
     })
 
 }

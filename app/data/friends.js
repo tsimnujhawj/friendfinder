@@ -45,6 +45,38 @@ let friendsObj = [{
         1,
         5
       ]
+  },
+  {
+    "name":"All Fives",
+    "photo":"http://brh_theprepzone.s3.amazonaws.com/2014/08/5.png",
+    "scores":[
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5
+      ]
+  },
+  {
+    "name":"All Ones",
+    "photo":"https://temporarytattoos.com/pub/media/catalog/product/cache/c687aa7517cf01e65c009f6943c2b1e9/n/u/number-1-temporary-tattoo_5035.jpg",
+    "scores":[
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
   }
 ]
   
